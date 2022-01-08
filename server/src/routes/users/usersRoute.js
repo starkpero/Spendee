@@ -4,6 +4,6 @@ const {registerUser, fetchUsers} = require('../../controllers/users/usersControl
 const userRoute = express.Router();
 
 userRoute.post("/register",registerUser);
-userRoute.get('/',fetchUsers);
+userRoute.get("/",fetchUsers);
 
 module.exports = userRoute;
