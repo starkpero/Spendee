@@ -24,6 +24,10 @@ dbConnect();
 //Middlewares
 app.use(express.json());
 
+
+app.get("/",(req,res)=>{
+    res.json({msg : "Welcome to Spendee api"});
+});
 //routes
 app.use("/api/users",userRoute);
 //app.post("/login", loginUser);
