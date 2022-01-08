@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const dbConnect = require('./config/dbConnect');
 const {errorHandler, notFound } = require('./middlewares/errorMiddleware');
 const userRoute = require('./routes/users/usersRoute');
+const incomeRoute = require('./routes/income/incomeRoute');
 
 
 const app = express();
@@ -28,9 +29,10 @@ app.use(express.json());
 app.get("/",(req,res)=>{
     res.json({msg : "Welcome to Spendee api"});
 });
-//routes
+// user routes
 app.use("/api/users",userRoute);
-//app.post("/login", loginUser);
+// income routes
+app.use("/api/income", incomeRoute);
 
 //error
 app.use(notFound);
