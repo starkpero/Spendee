@@ -1,4 +1,5 @@
 const express = require('express');
+const dotenv = require('dotenv');
 const dbConnect = require('./config/dbConnect');
 const {errorHandler, notFound } = require('./middlewares/errorMiddleware');
 const userRoute = require('./routes/users/usersRoute');
@@ -6,6 +7,8 @@ const userRoute = require('./routes/users/usersRoute');
 
 const app = express();
 
+//environment variable env
+dotenv.config();
 
 const logger = (res,req,next)=>{
     console.log("Middleware");
