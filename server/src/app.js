@@ -22,7 +22,7 @@ dbConnect();
 app.use(express.json());
 
 //routes
-app.use("/",userRoute);
+app.use("/api/users",userRoute);
 //app.post("/login", loginUser);
 
 //error

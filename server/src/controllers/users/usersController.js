@@ -22,6 +22,20 @@ const registerUser = expressAsyncHandler(
 )
 
 
+//fetch users
+const fetchUsers = expressAsyncHandler(
+    async(req, res)=>{
+        try{
+            const users = await User.find({});
+            res.json(users);
+        }
+        catch(error){
+            res.json(error);
+        }
+    }
+);
+
 module.exports = {
-    registerUser
+    registerUser,
+    fetchUsers
 };
