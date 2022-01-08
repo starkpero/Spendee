@@ -1,5 +1,6 @@
 const express = require('express');
 const dbConnect = require('./config/dbConnect');
+const {errorHandler} = require('./middlewares/errorMiddleware');
 const userRoute = require('./routes/users/usersRoute');
 
 
@@ -24,6 +25,8 @@ app.use(express.json());
 app.use("/",userRoute);
 //app.post("/login", loginUser);
 
+//error
+app.use(errorHandler);
 
 
 module.exports = app;
