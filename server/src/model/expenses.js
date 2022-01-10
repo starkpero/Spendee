@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-
+const mongoosePaginate = require('mongoose-paginate-v2');
 
 //schema
-const expensSchema = mongoose.Schema(
+const expenseSchema = mongoose.Schema(
   {
     title: {
       required: [true, "Title  is required"],
@@ -41,6 +41,10 @@ const expensSchema = mongoose.Schema(
   }
 );
 
-const Expense = mongoose.model("Expense", expensSchema);
+
+//pagination
+expenseSchema.plugin(mongoosePaginate);
+
+const Expense = mongoose.model("Expense", expenseSchema);
 
 module.exports = Expense;
