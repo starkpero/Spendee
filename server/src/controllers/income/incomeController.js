@@ -20,6 +20,7 @@ const createIncome = expressAsyncHandler(async (req, res) => {
 
 //fetch all income
 const fetchIncome = expressAsyncHandler(async (req, res) => {
+  console.log(req.headers);
   console.log(req?.user);
   const { page } = req.query;
   try {
