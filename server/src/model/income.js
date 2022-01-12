@@ -49,3 +49,20 @@ incomeSchema.plugin(mongoosePaginate);
 const Income = mongoose.model("Income", incomeSchema);
 
 module.exports = Income;
+
+
+
+
+
+
+
+
+
+// toObject(): This produces a "plain" or "raw" representation of the object data without all the other "mongoose magic" parts of the extended object. But the purpose of "virtuals" is to make those methods part of the object returned. Basically just the plain object, called as:
+
+//  var model = Model.new({ "name": { "first": "Walter", "last": "White" });
+//  console.log( model.toObject() );
+// toJSON(): You can call this method explicitly and just as shown above, but it's most common usage is from a JSON parser like below where it is implicitly called. The same principles apply as above. The "virtuals" includes the result of those methods in the serialized output, such as:
+
+//  var model = Model.new({ "name": { "first": "Walter", "last": "White" });
+//  JSON.stringify( model, undefined, 2 );
