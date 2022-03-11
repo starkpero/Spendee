@@ -16,7 +16,3 @@ const dbConnect = async ()=>{
 
 
 module.exports = dbConnect;
-
-
-//PASSWORD - 6u588GLKyMQ1LDB5
-//mongodb+srv://spendee:<password>@spendee.xxs6q.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
